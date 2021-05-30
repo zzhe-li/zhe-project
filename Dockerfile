@@ -1,4 +1,4 @@
-FROM jupyter/datascience-notebook:notebook-6.1.5
+FROM jupyter/scipy-notebook:d113a601dbb8
 
 # start binder compatibility
 # from https://mybinder.readthedocs.io/en/latest/tutorials/dockerfile.html
@@ -23,3 +23,5 @@ RUN pip install \
         jupyter_http_over_ws>=0.0.7 && \
     jupyter serverextension enable --py jupyter_http_over_ws && \
     jupyter lab build
+
+RUN pip install folium
